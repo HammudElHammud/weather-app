@@ -62,7 +62,7 @@ const LastSearchedCard = (props) => {
                                     <p id="tempDescription">{today?.weather[0]?.description.length > 0 ? toCamelCase(today?.weather[0]?.description) : ''}</p>
                                 </div>
                                 <p style={{fontSize: "1.5rem"}}>
-                                    <a href='#'
+                                    <a href='/'
                                        className={"cursor " + (unitIsCelcius ? ' active' : '') }
                                        onClick={(e)=>{
                                            e.preventDefault()
@@ -72,7 +72,7 @@ const LastSearchedCard = (props) => {
                                     </a>{" "}
                                     |{" "}
                                     <a
-                                        href='#'
+                                        href='/'
                                         className={"cursor " + (!unitIsCelcius ? ' active' : '') }
                                         onClick={(e)=> {
                                             e.preventDefault()

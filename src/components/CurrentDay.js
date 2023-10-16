@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import umberella from '../images/icon-umberella.png'
 import wind from '../images/icon-wind.png'
-import {getFormattedDate, toCamelCase, toFerenheit, weatherIconsMap} from "../utils/Helpars/WeatherHelper";
+import {getFormattedDate, toCamelCase, toFerenheit,} from "../utils/Helpars/WeatherHelper";
 
 const CurrentDay = (props) => {
     const [today, setToday] = useState(null)
@@ -62,7 +62,7 @@ const CurrentDay = (props) => {
 
                                     </div>
                                     <p style={{fontSize: "1.5rem"}}>
-                                        <a href='#'
+                                        <a href='/'
                                             className={"cursor " + (unitIsCelcius ? ' active' : '') }
                                             onClick={(e)=>{
                                                 e.preventDefault()
@@ -72,7 +72,7 @@ const CurrentDay = (props) => {
                                         </a>{" "}
                                         |{" "}
                                         <a
-                                            href='#'
+                                            href='/'
                                             className={"cursor " + (!unitIsCelcius ? ' active' : '') }
                                             onClick={(e)=> {
                                                 e.preventDefault()

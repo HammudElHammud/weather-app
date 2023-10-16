@@ -27,18 +27,25 @@ function App() {
 
 
     useEffect(() => {
+        gettingUserLocation()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line
+    }, [])
+
+    const gettingUserLocation = () => {
         Swal.loading()
         api.get('https://ipapi.co/json/')
             .then((position) => {
-                gettingLocationWeather(position?.data?.city)
                 setCity(position?.data?.city)
                 setCountry(position?.data?.country)
+                gettingLocationWeather(position?.data?.city)
                 Swal.close()
             }).catch((err) => {
             Swal.error('Oops', "Getting error while retrieving location")
 
         })
-    }, [])
+
+    }
 
     const setBackgroundImg = (value) => {
 
