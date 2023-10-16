@@ -1,0 +1,117 @@
+a {
+    color: white;
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+    color: white;
+    text-decoration: none;
+    opacity: 1;
+}
+
+.active {
+    color: white;
+    text-decoration: none;
+    opacity: 1;
+}
+
+#wrapper {
+    background-color: #28688C;
+    /*box-shadow: 1px 5px 25px 3px #444;*/
+    border-radius: 10px;
+    margin: 4px;
+    padding: 2px;
+    color: white;
+}
+
+#current-weather {
+    padding: 15px;
+}
+
+#mainTemperature {
+    font-size: 5.5em;
+    line-height: 0.7;
+}
+
+#tempDescription {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.lasts-days{
+    padding: 2px;
+    align-content: center;
+    display: flex;
+    justify-content: center
+}
+
+.day-weather-box {
+    border: 1px solid #28688C;
+    background-color: #2E7FA1;
+    border-radius: 5px;
+    height: 5em;
+}
+
+.day-weather-box p {
+    margin-bottom: 0;
+}
+
+.side-weather-info {
+    padding: 0px 10px;
+}
+
+.day-weather-inner-box {
+    display: inline-flex;
+    margin: 14px auto;
+    padding: 0px 1px;
+}
+
+.forecast-main {
+    padding: 0px 0px 0px 30px;
+}
+
+.forecast-icon {
+    font-size: 14px;
+    margin-left: 50px;
+    margin-top: -30px !important;
+    position: absolute;
+}
+
+.modal-body p {
+    color: #333;
+}
+
+
+@media screen and (max-width: 500px) {
+    .forecast-icon {
+        font-size: 14px;
+        margin-left: 20px;
+        margin-top: -20px !important;
+        position: absolute;
+    }
+    .lasts-days {
+        display: flow;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .forecast-icon {
+        font-size: 14px;
+        margin-left: 20px;
+        margin-top: -17px !important;
+        position: absolute;
+    }
+    .mainTemperatureCenter {
+        display: flex;
+        margin-top: 100px !important;
+        justify-content: center;
+    }
+    .lasts-days {
+        display: flow;
+    }
+
+}
+
+
