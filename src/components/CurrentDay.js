@@ -12,6 +12,28 @@ const CurrentDay = (props) => {
 
     }, [props.currentDay])
 
+
+    var weatherIconsMap = {
+        "01d": "wi-day-sunny",
+        "01n": "wi-night-clear",
+        "02d": "wi-day-cloudy",
+        "02n": "wi-night-cloudy",
+        "03d": "wi-cloud",
+        "03n": "wi-cloud",
+        "04d": "wi-cloudy",
+        "04n": "wi-cloudy",
+        "09d": "wi-showers",
+        "09n": "wi-showers",
+        "10d": "wi-day-hail",
+        "10n": "wi-night-hail",
+        "11d": "wi-thunderstorm",
+        "11n": "wi-thunderstorm",
+        "13d": "wi-snow",
+        "13n": "wi-snow",
+        "50d": "wi-fog",
+        "50n": "wi-fog"
+    };
+
     return (
         <>
             <div className="forecast-table">
@@ -40,16 +62,23 @@ const CurrentDay = (props) => {
 
                                     </div>
                                     <p style={{fontSize: "1.5rem"}}>
-                                        <a
+                                        <a href='#'
                                             className={"cursor " + (unitIsCelcius ? ' active' : '') }
-                                            onClick={()=> setUnitIsCelcius(true)}
+                                            onClick={(e)=>{
+                                                e.preventDefault()
+                                                setUnitIsCelcius(true)}}
                                             id="celcius">
                                             °C
                                         </a>{" "}
                                         |{" "}
                                         <a
+                                            href='#'
                                             className={"cursor " + (!unitIsCelcius ? ' active' : '') }
-                                            onClick={()=> setUnitIsCelcius(false)}
+                                            onClick={(e)=> {
+                                                e.preventDefault()
+                                                setUnitIsCelcius(false)
+                                            }
+                                        }
                                             id="farenheit">
                                             °F
                                         </a>

@@ -4,7 +4,6 @@ import {
     getFormattedDate,
     toCamelCase,
     toFerenheit,
-    weatherIconsMap
 } from "../../utils/Helpars/WeatherHelper";
 
 const LastSearchedCard = (props) => {
@@ -15,6 +14,27 @@ const LastSearchedCard = (props) => {
         setToday(props?.data?.list[0])
 
     }, [props.data])
+
+    var weatherIconsMap = {
+        "01d": "wi-day-sunny",
+        "01n": "wi-night-clear",
+        "02d": "wi-day-cloudy",
+        "02n": "wi-night-cloudy",
+        "03d": "wi-cloud",
+        "03n": "wi-cloud",
+        "04d": "wi-cloudy",
+        "04n": "wi-cloudy",
+        "09d": "wi-showers",
+        "09n": "wi-showers",
+        "10d": "wi-day-hail",
+        "10n": "wi-night-hail",
+        "11d": "wi-thunderstorm",
+        "11n": "wi-thunderstorm",
+        "13d": "wi-snow",
+        "13n": "wi-snow",
+        "50d": "wi-fog",
+        "50n": "wi-fog"
+    };
 
     return(
         <>
@@ -42,17 +62,24 @@ const LastSearchedCard = (props) => {
                                     <p id="tempDescription">{today?.weather[0]?.description.length > 0 ? toCamelCase(today?.weather[0]?.description) : ''}</p>
                                 </div>
                                 <p style={{fontSize: "1.5rem"}}>
-                                    <a
+                                    <a href='#'
                                        className={"cursor " + (unitIsCelcius ? ' active' : '') }
-                                       onClick={()=> setUnitIsCelcius(true)}
-                                       >
+                                       onClick={(e)=>{
+                                           e.preventDefault()
+                                           setUnitIsCelcius(true)}}
+                                       id="celcius">
                                         °C
                                     </a>{" "}
                                     |{" "}
                                     <a
-                                       className={"cursor " + (!unitIsCelcius ? ' active' : '') }
-                                       onClick={()=> setUnitIsCelcius(false)}
-                                       >
+                                        href='#'
+                                        className={"cursor " + (!unitIsCelcius ? ' active' : '') }
+                                        onClick={(e)=> {
+                                            e.preventDefault()
+                                            setUnitIsCelcius(false)
+                                        }
+                                        }
+                                        id="farenheit">
                                         °F
                                     </a>
                                 </p>
